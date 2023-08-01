@@ -23,5 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 #api
-api.js
-host.js
+ApiKey.js
+Host.js

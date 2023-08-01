@@ -3,8 +3,8 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { generate, count } from "random-words";
-import API_KEY from "./api";
-import HOST from "./host";
+import API_KEY from "./ApiKey";
+import HOST from "./Host";
 
 function App() {
   const [data, setData] = useState(null);

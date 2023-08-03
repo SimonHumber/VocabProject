@@ -1,20 +1,21 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Container, Button } from 'react-bootstrap';
 
 const WelcomePage = () => {
-    const navigate = useNavigate();
+//   const navigate = useNavigate();
 
-    const handleGoToMainPage = () => {
-    navigate('/main');
+  const handleGoToMainPage = () => {
+    // navigate('/main');
   };
 
   return (
-    <div className="container mt-5">
+    <Container className="mt-5">
       <h1>Welcome to My Word App</h1>
-      <button className="btn btn-primary" onClick={handleGoToMainPage}>
+      <Button variant="primary" onClick={handleGoToMainPage}>
         Go
-      </button>
-    </div>
+      </Button>
+    </Container>
   );
 };
 

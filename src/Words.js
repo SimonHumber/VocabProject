@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import generate from "random-words";
+import { generate } from "random-words";
 
 const ApiComponent2 = () => {
   const [data, setData] = useState(null);

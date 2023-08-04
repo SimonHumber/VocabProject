@@ -1,20 +1,18 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Container, Button } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './welcomePage.css';
 
 const WelcomePage = () => {
-//   const navigate = useNavigate();
 
   const handleGoToMainPage = () => {
-    // navigate('/main');
   };
 
   return (
-    <Container className="mt-5">
-      <h1>Welcome to My Word App</h1>
-      <Button variant="primary" onClick={handleGoToMainPage}>
-        Go
-      </Button>
+    <Container className="welcome-page-container text-center bg-dark text-light py-5">
+      <h1 className="welcome-title text-primary">Welcome to the word generation app</h1>
+      <Button variant="primary" onClick={handleGoToMainPage}>Start your journey!</Button>
     </Container>
   );
 };

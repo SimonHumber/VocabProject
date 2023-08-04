@@ -1,0 +1,51 @@
+.main-page-container {
+    height: 800px;
+  }
+  
+  .word {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .definition {
+    font-size: 24px;
+  }
+  
+  .generate-btn {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .sidebar {
+    height: 100%;
+    padding: 20px;
+    background-color: #343a40;
+  }
+  
+  .word-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .word-list li {
+    margin-bottom: 5px;
+  }
+  
+  .add-btn {
+    margin-top: 20px;
+  }
+  
+  .bg-dark {
+    background-color: #343a40;
+  }
+  
+  .text-primary {
+    color: #007bff;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {generate} from "random-words";
+import { generate } from "random-words";
 
 const ApiComponent2 = () => {
   const [data, setData] = useState(null);
@@ -36,16 +36,17 @@ const ApiComponent2 = () => {
   return (
     <div>
       <p>Word: {data && data.word}</p>
-      <p>Definition: </p>
       <div>
         {data &&
           data.results &&
           data.results.map((result, index) => (
             <span key={index}>
-              {result.definition}
-              {index !== data.results.length - 1 && ", "}
-              <br />
-              <br />
+              <p>
+                Definition[{index + 1}]:
+                {result.definition}
+                {index !== data.results.length - 1 && ", "}
+                <br />
+              </p>
             </span>
           ))}
       </div>
@@ -55,3 +56,4 @@ const ApiComponent2 = () => {
 };
 
 export default ApiComponent2;
+

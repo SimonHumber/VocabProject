@@ -5,9 +5,11 @@ import DictionaryPage from './DictionaryPage';
 
 const App = () => {
   return (
+    <div>
     <WelcomePage />
-    // <MainPage />
-    // <DictionaryPage />
+    <MainPage />
+    {/* <DictionaryPage /> */}
+    </div>
   );
 };
 

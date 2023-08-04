@@ -1,13 +1,16 @@
-import SearchApiWords from "./searchApiWords.js";
-import ApiComponent2 from "./Words.js";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Routing from "./routing";
+import MainApp from "./mainApp";
 
 export default function App() {
   return (
-    <div className="App">
-      <h1>Search for a specific word</h1>
-      <SearchApiWords />
-      <h1>Generate random word</h1>
-      <ApiComponent2 />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Routing />}/>
+          <Route path="/mainApp" element={<MainApp />}/>
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }

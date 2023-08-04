@@ -10,7 +10,7 @@ const WelcomePage = () => {
   };
 
   return (
-    <Container className="welcome-page-container text-center bg-dark text-light py-5">
+    <Container className="welcome-page-container bg-dark">
       <h1 className="welcome-title text-primary">Welcome to the word generation app</h1>
       <Button variant="primary" onClick={handleGoToMainPage}>Start your journey!</Button>
     </Container>

@@ -1,6 +1,10 @@
 .main-page-container {
     height: 800px;
   }
+
+  .main-page-row{
+    height: 100%;
+  }
   
   .word {
     font-size: 48px;

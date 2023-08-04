@@ -12,19 +12,6 @@ const MainPage = () => {
   const saveWord = () => {
   };
 
-  // return (
-  //   <Container className="mt-5">
-  //     <h1>Word: {word}</h1>
-  //     <Button variant="primary" onClick={generateNewWord}>
-  //       Generate
-  //     </Button>
-  //     <Button variant="success" className="ml-3" onClick={saveWord}>
-  //       Save
-  //     </Button>
-  //     {/* Add the word list on the right-hand side */}
-  //     {/* Replace this with your own implementation */}
-  //   </Container>
-  // );
   return (
     <Container fluid className="main-page-container bg-dark text-light">
       <Row className="justify-content-center align-items-center main-page-row">

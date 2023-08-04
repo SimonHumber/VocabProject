@@ -6,7 +6,9 @@ import DictionaryPage from './DictionaryPage';
 const App = () => {
   return (
     <div>
+      Welcome Page
     <WelcomePage />
+    Main Page
     <MainPage />
     {/* <DictionaryPage /> */}
     </div>

@@ -10,7 +10,8 @@ const App = () => {
     <WelcomePage />
     Main Page
     <MainPage />
-    {/* <DictionaryPage /> */}
+    Dictionary Page
+    <DictionaryPage />
     </div>
   );
 };

@@ -3,23 +3,48 @@ import { Container, Button, Row, Col, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './mainPage.css'
 import NavBar from './NavBar';
+import axios from "axios";
+import { generate, count } from "random-words";
+import API_KEY from "./ApiKey";
+import HOST from "./Host";
 
 const MainPage = () => {
 
   const [word, setWord] = useState("Word");
-  const [wordDefiniton, setWordDefinition] = useState("Definition")
+  const [wordDefiniton, setWordDefinition] = useState("Definition");
+  const [data, setData] = useState(null);
+  const [newWord, setNewWord] = useState(generate());
 
   const generateNewWord = () => {
-    // generate word code
+    setNewWord(generate());
   };
 
   const saveWord = () => {
     // save word code
   };
 
+  //json format may change,for example with word nor
+  const url = "https://wordsapiv1.p.rapidapi.com/words/" + newWord;
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": API_KEY,
+      "X-RapidAPI-Host": HOST,
+    },
+  };
+
   useEffect(()=>{
-    // API call
-  }, [])
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(url, options);
+        setData(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, [newWord])
 
   return (
     <Container fluid className="main-page-container bg-dark text-light">
@@ -27,8 +52,14 @@ const MainPage = () => {
       <Row className="align-items-center main-page-row">
         <Col className="text-center">
         <Button variant="primary" className="generate-btn" onClick={generateNewWord}>Generate</Button>
-          <h1 className="word">Word</h1>
-          <p className="definition">Definition of the Word</p>
+          {data ? (
+          <div>
+            <p>{data["word"]}</p>
+            <p>{data["results"][0]["definition"]}</p>
+          </div>
+            ) : (
+          <p>Loading data...</p>
+            )}
           <Button variant="primary" className="add-btn" onClick={saveWord}>Add</Button>
         </Col>
         <Col>

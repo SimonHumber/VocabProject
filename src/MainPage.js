@@ -10,8 +10,8 @@ import HOST from "./Host";
 
 const MainPage = () => {
 
-  const [word, setWord] = useState("Word");
-  const [wordDefiniton, setWordDefinition] = useState("Definition");
+  const [word, setWord] = useState();
+  const [wordDefiniton, setWordDefinition] = useState();
   const [data, setData] = useState(null);
   const [newWord, setNewWord] = useState(generate());
 
@@ -38,6 +38,8 @@ const MainPage = () => {
       try {
         const response = await axios.get(url, options);
         setData(response.data);
+        setWord(response.data["word"]);
+        setWordDefinition(response.data["results"][0]["definition"])
       } catch (error) {
         console.error(error);
       }
@@ -54,8 +56,8 @@ const MainPage = () => {
         <Button variant="primary" className="generate-btn" onClick={generateNewWord}>Generate</Button>
           {data ? (
           <div>
-            <p>{data["word"]}</p>
-            <p>{data["results"][0]["definition"]}</p>
+            <p>{word}</p>
+            <p>{wordDefiniton}</p>
           </div>
             ) : (
           <p>Loading data...</p>

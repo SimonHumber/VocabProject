@@ -1,3 +1,11 @@
 .dictionary-page-container{
     height: 800px;
 }
+
+.dictionary{
+    margin-top: 20px;
+}
+
+.dictionary-search-bar{
+    max-width: 800px;
+}

@@ -6,7 +6,8 @@ import NavBar from './NavBar';
 
 const MainPage = () => {
 
-  const [word, setWord] = useState('');
+  const [word, setWord] = useState("Word");
+  const [wordDefiniton, setWordDefinition] = useState("Definition")
 
   const generateNewWord = () => {
     // generate word code

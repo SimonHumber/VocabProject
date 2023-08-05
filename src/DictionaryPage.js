@@ -7,7 +7,7 @@ const DictionaryPage = () => {
   return (
     <Container fluid className="dictionary-page-container bg-dark text-light">
       <NavBar />
-      <Row className="align-items-center">
+      <Row className="align-items-center dictionary-page-row">
         <Col>
           <h1 className="dictionary">Dictionary</h1>
           <Form className="mb-3">

@@ -23,7 +23,7 @@ const MainPage = () => {
   return (
     <Container fluid className="main-page-container bg-dark text-light">
       <NavBar />
-      <Row className="justify-content-center align-items-center main-page-row">
+      <Row className="align-items-center main-page-row">
         <Col className="text-center">
         <Button variant="primary" className="generate-btn" onClick={generateNewWord}>Generate</Button>
           <h1 className="word">Word</h1>

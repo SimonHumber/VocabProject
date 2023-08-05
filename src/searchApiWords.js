@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-
-
+import API_KEY from "./ApiKey";
+import HOST from "./Host";
+import URL from "./Url";
 
 const SearchApiWords = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -9,14 +10,13 @@ const SearchApiWords = () => {
 
   useEffect(() => {
     if (actualQuery !== "") {
-      const url = "https://wordsapiv1.p.rapidapi.com/words/" + actualQuery;
+      const url = URL + actualQuery;
       const options = {
         method: "GET",
         headers: {
-          "X-RapidAPI-Key":
-            "e7d3d20c19msh9909da35cc85505p1c98c1jsn6c2e7f6dc962",
-          "X-RapidAPI-Host": "wordsapiv1.p.rapidapi.com"
-        }
+          "X-RapidAPI-Key": API_KEY,
+          "X-RapidAPI-Host": HOST,
+        },
       };
       fetch(url, options)
         .then((response) => response.json())
@@ -49,22 +49,19 @@ const SearchApiWords = () => {
         fetchedData.results &&
         fetchedData.results.length > 0 ? (
         <div>
-          <p>
-          Word: {fetchedData.word}
-          </p>
-        {fetchedData &&
-          fetchedData.results &&
-          fetchedData.results.map((result, index) => (
-            <span key={index}>
-              <p>
-              Definition[{index+1}] :
-              {result.definition}
-              {index !== fetchedData.results.length - 1}
-              <br />
-              </p>
-            </span>
-          ))}
-      </div>
+          <p>Word: {fetchedData.word}</p>
+          {fetchedData &&
+            fetchedData.results &&
+            fetchedData.results.map((result, index) => (
+              <span key={index}>
+                <p>
+                  Definition[{index + 1}] :{result.definition}
+                  {index !== fetchedData.results.length - 1}
+                  <br />
+                </p>
+              </span>
+            ))}
+        </div>
       ) : null}
     </div>
   );
@@ -72,7 +69,7 @@ const SearchApiWords = () => {
 
 function SearchBar(props) {
   const searchBarStyle = {
-    textAlign: "right"
+    textAlign: "right",
   };
   return (
     <div style={searchBarStyle}>

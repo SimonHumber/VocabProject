@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import NavBar from './NavBar';
+import './dictionaryPage.css'
 
 const DictionaryPage = () => {
   return (

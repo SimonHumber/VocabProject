@@ -11,7 +11,6 @@ import HOST from "./Host";
 const MainPage = () => {
 
   const [word, setWord] = useState();
-  const [wordDefiniton, setWordDefinition] = useState();
   const [data, setData] = useState(null);
   const [newWord, setNewWord] = useState(generate());
 
@@ -39,7 +38,6 @@ const MainPage = () => {
         const response = await axios.get(url, options);
         setData(response.data);
         setWord(response.data["word"]);
-        setWordDefinition(response.data["results"][0]["definition"])
       } catch (error) {
         console.error(error);
       }
@@ -54,14 +52,23 @@ const MainPage = () => {
       <Row className="align-items-center main-page-row">
         <Col className="text-center">
         <Button variant="primary" className="generate-btn" onClick={generateNewWord}>Generate</Button>
-          {data ? (
+        <div>
+          <p>Word: {word}</p>
           <div>
-            <p>{word}</p>
-            <p>{wordDefiniton}</p>
+            {data &&
+              data.results &&
+              data.results.map((result, index) => (
+                <span key={index}>
+                  <p>
+                    Definition {index + 1}:&nbsp;
+                    {result.definition}
+                    {index !== data.results.length - 1 && ", "}
+                    <br />
+                  </p>
+                </span>
+              ))}
           </div>
-            ) : (
-          <p>Loading data...</p>
-            )}
+        </div>
           <Button variant="primary" className="add-btn" onClick={saveWord}>Add</Button>
         </Col>
         <Col>

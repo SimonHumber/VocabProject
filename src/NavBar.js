@@ -1,27 +1,20 @@
 import React from 'react';
-import { Nav, Button } from 'react-bootstrap/';
+import { Button } from 'react-bootstrap/';
 import { Link } from 'react-router-dom';
 import './navBar.css';
 
-const NavBar = (props) => {
+const NavBar = () => {
 
   return (
-      <Nav 
-      className="nav-bar" 
-      variant="pills" 
-      defaultActiveKey="/main" 
-      activeKey={props.page}>
-      <Nav.Item>
-        <Button variant="primary" size="sm" className="nav-button">
-          <Link to="/main" className="btn">Generate</Link>
+      <div
+      className="nav-bar">
+        <Button variant="primary" className="nav-button">
+          <Link to="/main" className="link-btn">Generate</Link>
         </Button>
-      </Nav.Item>
-      <Nav.Item>
-        <Button variant="primary" size="sm" className="nav-button">
-          <Link to="/dictionary" className="btn">Dictionary</Link>
+        <Button variant="primary"className="nav-button">
+          <Link to="/dictionary" className="link-btn">Dictionary</Link>
         </Button>
-      </Nav.Item>
-      </Nav>
+      </div>
   );
 };
 

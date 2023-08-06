@@ -7,7 +7,7 @@ import SearchApiWords from './searchApiWords';
 const DictionaryPage = () => {
   return (
     <Container fluid className="dictionary-page-container bg-dark text-light">
-      <NavBar />
+      <NavBar page="/dictionary"/>
       <Row className="align-items-center dictionary-page-row">
         <Col>
           {/* <h1 className="dictionary">Dictionary</h1>

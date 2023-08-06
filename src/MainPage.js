@@ -48,7 +48,7 @@ const MainPage = () => {
 
   return (
     <Container fluid className="main-page-container bg-dark text-light">
-      <NavBar />
+      <NavBar page="/main"/>
       <Row className="align-items-center main-page-row">
         <Col className="text-center">
         <Button variant="primary" className="generate-btn" onClick={generateNewWord}>Generate</Button>

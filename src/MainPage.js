@@ -20,7 +20,6 @@ const MainPage = () => {
   };
 
   const saveWord = () => {
-    // save word code
   };
 
   //json format may change,for example with word nor
@@ -73,16 +72,17 @@ const MainPage = () => {
           <Button variant="primary" className="add-btn" onClick={saveWord}>Add</Button>
         </Col>
         <Col>
-          {/* <div className="sidebar">
-            <Form className="mb-3">
+          <div className="sidebar">
+            {/* <Form className="mb-3">
               <Form.Control type="text" placeholder="Search..." />
             </Form>
             <ul className="word-list">
               <li>Word1</li>
               <li>Word2</li>
-            </ul>
-          </div> */}
-          <SideBar />
+            </ul> */}
+            <SideBar />
+          </div>
+          
         </Col>
       </Row>
     </Container>

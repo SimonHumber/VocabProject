@@ -1,0 +1,30 @@
+body {
+    background-color: black;
+    color: orange;
+
+  }
+  
+  .main-container {
+    text-align: center; /* Add this line to center the contents */
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: orange;
+    color: black;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+  }
+  

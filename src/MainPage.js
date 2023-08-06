@@ -7,6 +7,7 @@ import axios from "axios";
 import { generate, count } from "random-words";
 import API_KEY from "./ApiKey";
 import HOST from "./Host";
+import SideBar from './SavedWords'
 
 const MainPage = () => {
 
@@ -72,7 +73,7 @@ const MainPage = () => {
           <Button variant="primary" className="add-btn" onClick={saveWord}>Add</Button>
         </Col>
         <Col>
-          <div className="sidebar">
+          {/* <div className="sidebar">
             <Form className="mb-3">
               <Form.Control type="text" placeholder="Search..." />
             </Form>
@@ -80,7 +81,8 @@ const MainPage = () => {
               <li>Word1</li>
               <li>Word2</li>
             </ul>
-          </div>
+          </div> */}
+          <SideBar />
         </Col>
       </Row>
     </Container>

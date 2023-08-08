@@ -1,0 +1,19 @@
+.nav-bar{
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+}
+
+.nav-button{
+    margin-right: 10px;
+    padding: 0;
+}
+
+.link-btn {
+    padding: 8px;
+    color: white;
+    text-decoration: none;
+}
+
+.link-btn:hover{
+    color: white;
+}

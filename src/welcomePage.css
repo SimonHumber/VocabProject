@@ -1,0 +1,26 @@
+.welcome-page-container {
+    height: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .welcome-title {
+    font-size: 30px;
+    margin-bottom: 200px;
+  }
+  
+  .bg-dark {
+    background-color: #343a40;
+  }
+  
+  .text-primary {
+    color: #007bff;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }

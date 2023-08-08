@@ -11,8 +11,8 @@ const ApiComponent2 = () => {
     method: "GET",
     headers: {
       "X-RapidAPI-Key": "e7d3d20c19msh9909da35cc85505p1c98c1jsn6c2e7f6dc962",
-      "X-RapidAPI-Host": "wordsapiv1.p.rapidapi.com"
-    }
+      "X-RapidAPI-Host": "wordsapiv1.p.rapidapi.com",
+    },
   };
 
   const fetchWordData = async () => {
@@ -36,17 +36,18 @@ const ApiComponent2 = () => {
   return (
     <div>
       <p>Word: {data && data.word}</p>
+      <p>Definition: </p>
+
       <div>
         {data &&
           data.results &&
           data.results.map((result, index) => (
             <span key={index}>
-              <p>
-                Definition[{index + 1}]:
-                {result.definition}
-                {index !== data.results.length - 1 && ", "}
-                <br />
-              </p>
+              {result.definition}
+              {index !== data.results.length - 1 && ", "}
+              <br />
+              <br />
+
             </span>
           ))}
       </div>

@@ -17,16 +17,6 @@
     background-color: #343a40;
   }
   
-  .word-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .word-list li {
-    margin-bottom: 5px;
-  }
-  
   .add-btn {
     margin-top: 20px;
   }

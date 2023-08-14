@@ -8,6 +8,7 @@ import { generate, count } from "random-words";
 import API_KEY from "./ApiKey";
 import HOST from "./Host";
 import SideBar from "./SavedWords";
+import WordAndDefinitions from './Words';
 import URL from "./Url";
 
 const MainPage = () => {
@@ -15,11 +16,17 @@ const MainPage = () => {
   const [data, setData] = useState(null);
   const [newWord, setNewWord] = useState(generate());
 
+  // state component for Sidebar
+  const [wordList, setWordList] = useState([]);
+
   const generateNewWord = () => {
     setNewWord(generate());
   };
 
-  const saveWord = () => {};
+  // adds the current Generated word on screen to the word list
+  const addWord = () => {
+    setWordList([...wordList, word]);
+  };
 
   //json format may change,for example with word nor
   const url = URL + newWord;
@@ -57,34 +64,20 @@ const MainPage = () => {
           >
             Generate
           </Button>
-          <div>
-            <p>Word: {word}</p>
-            <div>
-              {data &&
-                data.results &&
-                data.results.map((result, index) => (
-                  <span key={index}>
-                    <p>
-                      Definition {index + 1}:&nbsp;
-                      {result.definition}
-                      {index !== data.results.length - 1 && ", "}
-                      <br />
-                    </p>
-                  </span>
-                ))}
-            </div>
-          </div>
+          <WordAndDefinitions data={data} handleNewWord={generateNewWord}/>
+          <Button
+            variant="primary"
+            className="add-btn"
+            onClick={addWord}
+          >
+            Add
+          </Button>
         </Col>
         <Col>
           <div className="sidebar">
-            {/* <Form className="mb-3">
-              <Form.Control type="text" placeholder="Search..." />
-            </Form>
-            <ul className="word-list">
-              <li>Word1</li>
-              <li>Word2</li>
-            </ul> */}
-            <SideBar />
+            <SideBar
+              wordList={wordList}
+              setWordList={setWordList}/>
           </div>
         </Col>
       </Row>

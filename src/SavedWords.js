@@ -1,25 +1,24 @@
 import { useState, useEffect } from "react";
-import { Container, Button, Row, Col, Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import API_KEY from "./ApiKey";
 import HOST from "./Host";
 import URL from "./Url";
 import axios from "axios";
 
-export default function SavedWords() {
+export default function SavedWords(props) {
   const [word, setWord] = useState("");
-  const [wordList, setWordList] = useState([]);
   const [definition, setDefinition] = useState("");
   return (
     <div>
       <AddWord
-        wordList={wordList}
-        setWordList={setWordList}
+        wordList={props.wordList}
+        setWordList={props.setWordList}
         word={word}
         setWord={setWord}
       />
       <Words
-        wordList={wordList}
-        setWordList={setWordList}
+        wordList={props.wordList}
+        setWordList={props.setWordList}
         definition={definition}
         setDefinition={setDefinition}
       />
@@ -72,7 +71,7 @@ function Definition(props) {
             </p>
           </span>
         ))}
-      <Button onClick={removeDefinition}>Remove Definition</Button>
+      <Button onClick={removeDefinition}>Hide Definition</Button>
     </div>
   );
 }
@@ -89,7 +88,7 @@ function Words(props) {
     <div>
       {props.wordList.map((word) => {
         return (
-          <div>
+          <div style={{marginTop:10, marginBottom:10}}>
             {word}{" "}
             <DefinitionButton
               word={word}
@@ -125,14 +124,12 @@ function AddWord(props) {
 
   return (
     <div>
-      <input
-        id="input"
-        placeholder="Add a word"
-        type="text"
-        onChange={(event) => setNewWord(event.target.value)}
-      />
+        <Form.Control
+          type="text"
+          placeholder="Add a word..."
+          onChange={(event) => setNewWord(event.target.value)}/>
       <br />
-      <Button onClick={addWord}>Save</Button>
+      <Button onClick={addWord} style={{marginBottom:10}}>Save</Button>
     </div>
   );
 }

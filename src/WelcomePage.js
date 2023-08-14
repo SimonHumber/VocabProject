@@ -13,7 +13,7 @@ const WelcomePage = () => {
 
   return (
     <Container fluid className="welcome-page-container bg-dark">
-      <h1 className="welcome-title text-primary">Welcome to the word generation app</h1>
+      <h1 className="welcome-title">Welcome to the word generation app</h1>
       <Link to="./main">
       <Button variant="primary" onClick={handleGoToMainPage}>Start your journey!</Button>
       </Link>

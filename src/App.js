@@ -6,14 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    // <div>
-    //   Welcome Page
-    // <WelcomePage />
-    // Main Page
-    // <MainPage />
-    // Dictionary Page
-    // <DictionaryPage />
-    // </div>
     <BrowserRouter>
       <div className="App">
         <Routes>

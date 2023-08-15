@@ -10,11 +10,6 @@ const DictionaryPage = () => {
       <NavBar page="/dictionary"/>
       <Row className="align-items-center dictionary-page-row">
         <Col>
-          {/* <h1 className="dictionary">Dictionary</h1>
-          <Form className="mb-3">
-            <Form.Control className="dictionary-search-bar"type="text" placeholder="Search..." />
-          </Form>
-          <Button variant="primary" className="search-btn">Search</Button> */}
           <SearchApiWords />
         </Col>
       </Row>

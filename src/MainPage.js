@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Container, Button, Row, Col, Form } from "react-bootstrap";
+import { Container, Button, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./mainPage.css";
 import NavBar from "./NavBar";
 import axios from "axios";
-import { generate, count } from "random-words";
+import { generate } from "random-words";
 import API_KEY from "./ApiKey";
 import HOST from "./Host";
 import SideBar from "./SavedWords";
